@@ -1,0 +1,518 @@
+
+IntRegImm/code.elf:     ファイル形式 elf32-littleriscv
+
+
+セクション .text の逆アセンブル:
+
+00008000 <_start>:
+    8000:	0080006f          	j	8008 <_init_reg>
+
+00008004 <_end>:
+    8004:	0000006f          	j	8004 <_end>
+
+00008008 <_init_reg>:
+    8008:	00000093          	li	ra,0
+    800c:	00000113          	li	sp,0
+    8010:	00000193          	li	gp,0
+    8014:	00000213          	li	tp,0
+    8018:	00000293          	li	t0,0
+    801c:	00000313          	li	t1,0
+    8020:	00000393          	li	t2,0
+    8024:	00000413          	li	s0,0
+    8028:	00000493          	li	s1,0
+    802c:	00000513          	li	a0,0
+    8030:	00000593          	li	a1,0
+    8034:	00000613          	li	a2,0
+    8038:	00000693          	li	a3,0
+    803c:	00000713          	li	a4,0
+    8040:	00000793          	li	a5,0
+    8044:	00000813          	li	a6,0
+    8048:	00000893          	li	a7,0
+    804c:	00000913          	li	s2,0
+    8050:	00000993          	li	s3,0
+    8054:	00000a13          	li	s4,0
+    8058:	00000a93          	li	s5,0
+    805c:	00000b13          	li	s6,0
+    8060:	00000b93          	li	s7,0
+    8064:	00000c13          	li	s8,0
+    8068:	00000c93          	li	s9,0
+    806c:	00000d13          	li	s10,0
+    8070:	00000d93          	li	s11,0
+    8074:	00000e13          	li	t3,0
+    8078:	00000e93          	li	t4,0
+    807c:	00000f13          	li	t5,0
+    8080:	00000f93          	li	t6,0
+    8084:	00020137          	lui	sp,0x20
+
+00008088 <_call_main>:
+    8088:	008000ef          	jal	ra,8090 <main>
+    808c:	f79ff06f          	j	8004 <_end>
+
+00008090 <main>:
+    8090:	fff00513          	li	a0,-1
+    8094:	00c0006f          	j	80a0 <main2>
+
+00008098 <end>:
+    8098:	00100893          	li	a7,1
+
+0000809c <end2>:
+    809c:	0000006f          	j	809c <end2>
+
+000080a0 <main2>:
+    80a0:	00150593          	addi	a1,a0,1
+    80a4:	00b888b3          	add	a7,a7,a1
+    80a8:	fff58593          	addi	a1,a1,-1
+    80ac:	00b888b3          	add	a7,a7,a1
+    80b0:	0005a613          	slti	a2,a1,0
+    80b4:	00c888b3          	add	a7,a7,a2
+    80b8:	fff5a613          	slti	a2,a1,-1
+    80bc:	00c888b3          	add	a7,a7,a2
+    80c0:	0005b693          	sltiu	a3,a1,0
+    80c4:	00d888b3          	add	a7,a7,a3
+    80c8:	fff5b693          	sltiu	a3,a1,-1
+    80cc:	00d888b3          	add	a7,a7,a3
+    80d0:	0015f713          	andi	a4,a1,1
+    80d4:	00e888b3          	add	a7,a7,a4
+    80d8:	fff5f713          	andi	a4,a1,-1
+    80dc:	00e888b3          	add	a7,a7,a4
+    80e0:	0005e713          	ori	a4,a1,0
+    80e4:	00e888b3          	add	a7,a7,a4
+    80e8:	fff6e713          	ori	a4,a3,-1
+    80ec:	00e888b3          	add	a7,a7,a4
+    80f0:	0005c713          	xori	a4,a1,0
+    80f4:	00e888b3          	add	a7,a7,a4
+    80f8:	fff5c713          	not	a4,a1
+    80fc:	00e888b3          	add	a7,a7,a4
+    8100:	00178793          	addi	a5,a5,1
+    8104:	00279793          	slli	a5,a5,0x2
+    8108:	00f888b3          	add	a7,a7,a5
+    810c:	0017d793          	srli	a5,a5,0x1
+    8110:	00f888b3          	add	a7,a7,a5
+    8114:	0015d793          	srli	a5,a1,0x1
+    8118:	00f888b3          	add	a7,a7,a5
+    811c:	4015d793          	srai	a5,a1,0x1
+    8120:	00f888b3          	add	a7,a7,a5
+    8124:	00001837          	lui	a6,0x1
+    8128:	010888b3          	add	a7,a7,a6
+    812c:	00000817          	auipc	a6,0x0
+
+00008130 <main3>:
+    8130:	0000006f          	j	8130 <main3>
+
+セクション .riscv.attributes の逆アセンブル:
+
+00000000 <.riscv.attributes>:
+   0:	1941                	.2byte	0x1941
+   2:	0000                	.2byte	0x0
+   4:	7200                	.2byte	0x7200
+   6:	7369                	.2byte	0x7369
+   8:	01007663          	bgeu	zero,a6,14 <_start-0x7fec>
+   c:	0000000f          	fence	unknown,unknown
+  10:	7205                	.2byte	0x7205
+  12:	3376                	.2byte	0x3376
+  14:	6932                	.2byte	0x6932
+  16:	7032                	.2byte	0x7032
+  18:	0030                	.2byte	0x30
+
+セクション .debug_line の逆アセンブル:
+
+00000000 <.debug_line>:
+   0:	0118                	.2byte	0x118
+   2:	0000                	.2byte	0x0
+   4:	0005                	.2byte	0x5
+   6:	0004                	.2byte	0x4
+   8:	002e                	.2byte	0x2e
+   a:	0000                	.2byte	0x0
+   c:	0101                	.2byte	0x101
+   e:	fb01                	.2byte	0xfb01
+  10:	0d0e                	.2byte	0xd0e
+  12:	0100                	.2byte	0x100
+  14:	0101                	.2byte	0x101
+  16:	0001                	.2byte	0x1
+  18:	0000                	.2byte	0x0
+  1a:	0001                	.2byte	0x1
+  1c:	0100                	.2byte	0x100
+  1e:	0101                	.2byte	0x101
+  20:	021f 0000 0000      	.byte	0x1f, 0x02, 0x00, 0x00, 0x00, 0x00
+  26:	0000002b          	.4byte	0x2b
+  2a:	0102                	.2byte	0x102
+  2c:	021f 020f 0056      	.byte	0x1f, 0x02, 0x0f, 0x02, 0x56, 0x00
+  32:	0000                	.2byte	0x0
+  34:	5601                	.2byte	0x5601
+  36:	0000                	.2byte	0x0
+  38:	0100                	.2byte	0x100
+  3a:	0500                	.2byte	0x500
+  3c:	0002                	.2byte	0x2
+  3e:	0080                	.2byte	0x80
+  40:	0300                	.2byte	0x300
+  42:	0109                	.2byte	0x109
+  44:	04090203          	lb	tp,64(s2)
+  48:	0100                	.2byte	0x100
+  4a:	04090203          	lb	tp,64(s2)
+  4e:	0100                	.2byte	0x100
+  50:	04090103          	lb	sp,64(s2)
+  54:	0100                	.2byte	0x100
+  56:	04090103          	lb	sp,64(s2)
+  5a:	0100                	.2byte	0x100
+  5c:	04090103          	lb	sp,64(s2)
+  60:	0100                	.2byte	0x100
+  62:	04090103          	lb	sp,64(s2)
+  66:	0100                	.2byte	0x100
+  68:	04090103          	lb	sp,64(s2)
+  6c:	0100                	.2byte	0x100
+  6e:	04090103          	lb	sp,64(s2)
+  72:	0100                	.2byte	0x100
+  74:	04090103          	lb	sp,64(s2)
+  78:	0100                	.2byte	0x100
+  7a:	04090103          	lb	sp,64(s2)
+  7e:	0100                	.2byte	0x100
+  80:	04090103          	lb	sp,64(s2)
+  84:	0100                	.2byte	0x100
+  86:	04090103          	lb	sp,64(s2)
+  8a:	0100                	.2byte	0x100
+  8c:	04090103          	lb	sp,64(s2)
+  90:	0100                	.2byte	0x100
+  92:	04090103          	lb	sp,64(s2)
+  96:	0100                	.2byte	0x100
+  98:	04090103          	lb	sp,64(s2)
+  9c:	0100                	.2byte	0x100
+  9e:	04090103          	lb	sp,64(s2)
+  a2:	0100                	.2byte	0x100
+  a4:	04090103          	lb	sp,64(s2)
+  a8:	0100                	.2byte	0x100
+  aa:	04090103          	lb	sp,64(s2)
+  ae:	0100                	.2byte	0x100
+  b0:	04090103          	lb	sp,64(s2)
+  b4:	0100                	.2byte	0x100
+  b6:	04090103          	lb	sp,64(s2)
+  ba:	0100                	.2byte	0x100
+  bc:	04090103          	lb	sp,64(s2)
+  c0:	0100                	.2byte	0x100
+  c2:	04090103          	lb	sp,64(s2)
+  c6:	0100                	.2byte	0x100
+  c8:	04090103          	lb	sp,64(s2)
+  cc:	0100                	.2byte	0x100
+  ce:	04090103          	lb	sp,64(s2)
+  d2:	0100                	.2byte	0x100
+  d4:	04090103          	lb	sp,64(s2)
+  d8:	0100                	.2byte	0x100
+  da:	04090103          	lb	sp,64(s2)
+  de:	0100                	.2byte	0x100
+  e0:	04090103          	lb	sp,64(s2)
+  e4:	0100                	.2byte	0x100
+  e6:	04090103          	lb	sp,64(s2)
+  ea:	0100                	.2byte	0x100
+  ec:	04090103          	lb	sp,64(s2)
+  f0:	0100                	.2byte	0x100
+  f2:	04090103          	lb	sp,64(s2)
+  f6:	0100                	.2byte	0x100
+  f8:	04090103          	lb	sp,64(s2)
+  fc:	0100                	.2byte	0x100
+  fe:	04090103          	lb	sp,64(s2)
+ 102:	0100                	.2byte	0x100
+ 104:	04090103          	lb	sp,64(s2)
+ 108:	0100                	.2byte	0x100
+ 10a:	04090203          	lb	tp,64(s2)
+ 10e:	0100                	.2byte	0x100
+ 110:	04090103          	lb	sp,64(s2)
+ 114:	0100                	.2byte	0x100
+ 116:	0409                	.2byte	0x409
+ 118:	0000                	.2byte	0x0
+ 11a:	0101                	.2byte	0x101
+ 11c:	0134                	.2byte	0x134
+ 11e:	0000                	.2byte	0x0
+ 120:	0005                	.2byte	0x5
+ 122:	0004                	.2byte	0x4
+ 124:	002e                	.2byte	0x2e
+ 126:	0000                	.2byte	0x0
+ 128:	0101                	.2byte	0x101
+ 12a:	fb01                	.2byte	0xfb01
+ 12c:	0d0e                	.2byte	0xd0e
+ 12e:	0100                	.2byte	0x100
+ 130:	0101                	.2byte	0x101
+ 132:	0001                	.2byte	0x1
+ 134:	0000                	.2byte	0x0
+ 136:	0001                	.2byte	0x1
+ 138:	0100                	.2byte	0x100
+ 13a:	0101                	.2byte	0x101
+ 13c:	021f 0000 0000      	.byte	0x1f, 0x02, 0x00, 0x00, 0x00, 0x00
+ 142:	005c                	.2byte	0x5c
+ 144:	0000                	.2byte	0x0
+ 146:	0102                	.2byte	0x102
+ 148:	021f 020f 0066      	.byte	0x1f, 0x02, 0x0f, 0x02, 0x66, 0x00
+ 14e:	0000                	.2byte	0x0
+ 150:	6601                	.2byte	0x6601
+ 152:	0000                	.2byte	0x0
+ 154:	0100                	.2byte	0x100
+ 156:	0500                	.2byte	0x500
+ 158:	9002                	.2byte	0x9002
+ 15a:	0080                	.2byte	0x80
+ 15c:	1900                	.2byte	0x1900
+ 15e:	04090103          	lb	sp,64(s2)
+ 162:	0100                	.2byte	0x100
+ 164:	04090203          	lb	tp,64(s2)
+ 168:	0100                	.2byte	0x100
+ 16a:	04090203          	lb	tp,64(s2)
+ 16e:	0100                	.2byte	0x100
+ 170:	04090203          	lb	tp,64(s2)
+ 174:	0100                	.2byte	0x100
+ 176:	04090103          	lb	sp,64(s2)
+ 17a:	0100                	.2byte	0x100
+ 17c:	04090103          	lb	sp,64(s2)
+ 180:	0100                	.2byte	0x100
+ 182:	04090103          	lb	sp,64(s2)
+ 186:	0100                	.2byte	0x100
+ 188:	04090103          	lb	sp,64(s2)
+ 18c:	0100                	.2byte	0x100
+ 18e:	04090103          	lb	sp,64(s2)
+ 192:	0100                	.2byte	0x100
+ 194:	04090103          	lb	sp,64(s2)
+ 198:	0100                	.2byte	0x100
+ 19a:	04090103          	lb	sp,64(s2)
+ 19e:	0100                	.2byte	0x100
+ 1a0:	04090103          	lb	sp,64(s2)
+ 1a4:	0100                	.2byte	0x100
+ 1a6:	04090103          	lb	sp,64(s2)
+ 1aa:	0100                	.2byte	0x100
+ 1ac:	04090103          	lb	sp,64(s2)
+ 1b0:	0100                	.2byte	0x100
+ 1b2:	04090103          	lb	sp,64(s2)
+ 1b6:	0100                	.2byte	0x100
+ 1b8:	04090103          	lb	sp,64(s2)
+ 1bc:	0100                	.2byte	0x100
+ 1be:	04090103          	lb	sp,64(s2)
+ 1c2:	0100                	.2byte	0x100
+ 1c4:	04090103          	lb	sp,64(s2)
+ 1c8:	0100                	.2byte	0x100
+ 1ca:	04090103          	lb	sp,64(s2)
+ 1ce:	0100                	.2byte	0x100
+ 1d0:	04090103          	lb	sp,64(s2)
+ 1d4:	0100                	.2byte	0x100
+ 1d6:	04090103          	lb	sp,64(s2)
+ 1da:	0100                	.2byte	0x100
+ 1dc:	04090103          	lb	sp,64(s2)
+ 1e0:	0100                	.2byte	0x100
+ 1e2:	04090103          	lb	sp,64(s2)
+ 1e6:	0100                	.2byte	0x100
+ 1e8:	04090103          	lb	sp,64(s2)
+ 1ec:	0100                	.2byte	0x100
+ 1ee:	04090103          	lb	sp,64(s2)
+ 1f2:	0100                	.2byte	0x100
+ 1f4:	04090103          	lb	sp,64(s2)
+ 1f8:	0100                	.2byte	0x100
+ 1fa:	04090103          	lb	sp,64(s2)
+ 1fe:	0100                	.2byte	0x100
+ 200:	04090103          	lb	sp,64(s2)
+ 204:	0100                	.2byte	0x100
+ 206:	04090103          	lb	sp,64(s2)
+ 20a:	0100                	.2byte	0x100
+ 20c:	04090103          	lb	sp,64(s2)
+ 210:	0100                	.2byte	0x100
+ 212:	04090103          	lb	sp,64(s2)
+ 216:	0100                	.2byte	0x100
+ 218:	04090103          	lb	sp,64(s2)
+ 21c:	0100                	.2byte	0x100
+ 21e:	04090103          	lb	sp,64(s2)
+ 222:	0100                	.2byte	0x100
+ 224:	04090103          	lb	sp,64(s2)
+ 228:	0100                	.2byte	0x100
+ 22a:	04090103          	lb	sp,64(s2)
+ 22e:	0100                	.2byte	0x100
+ 230:	04090103          	lb	sp,64(s2)
+ 234:	0100                	.2byte	0x100
+ 236:	04090103          	lb	sp,64(s2)
+ 23a:	0100                	.2byte	0x100
+ 23c:	04090103          	lb	sp,64(s2)
+ 240:	0100                	.2byte	0x100
+ 242:	04090103          	lb	sp,64(s2)
+ 246:	0100                	.2byte	0x100
+ 248:	04090203          	lb	tp,64(s2)
+ 24c:	0100                	.2byte	0x100
+ 24e:	0409                	.2byte	0x409
+ 250:	0000                	.2byte	0x0
+ 252:	0101                	.2byte	0x101
+
+セクション .debug_line_str の逆アセンブル:
+
+00000000 <.debug_line_str>:
+   0:	6d6f682f          	.4byte	0x6d6f682f
+   4:	2f65                	.2byte	0x2f65
+   6:	656d                	.2byte	0x656d
+   8:	746c                	.2byte	0x746c
+   a:	6f70                	.2byte	0x6f70
+   c:	6e69                	.2byte	0x6e69
+   e:	2f74                	.2byte	0x2f74
+  10:	2f757063          	bgeu	a0,s7,2f0 <_start-0x7d10>
+  14:	3362                	.2byte	0x3362
+  16:	7865                	.2byte	0x7865
+  18:	2f70                	.2byte	0x2f70
+  1a:	6562                	.2byte	0x6562
+  1c:	636e                	.2byte	0x636e
+  1e:	6d68                	.2byte	0x6d68
+  20:	7261                	.2byte	0x7261
+  22:	742f736b          	.4byte	0x742f736b
+  26:	7365                	.2byte	0x7365
+  28:	7374                	.2byte	0x7374
+  2a:	2f00                	.2byte	0x2f00
+  2c:	6f68                	.2byte	0x6f68
+  2e:	656d                	.2byte	0x656d
+  30:	6c656d2f          	.4byte	0x6c656d2f
+  34:	7074                	.2byte	0x7074
+  36:	746e696f          	jal	s2,e677c <stack_top+0xc677c>
+  3a:	7570632f          	.4byte	0x7570632f
+  3e:	6533622f          	.4byte	0x6533622f
+  42:	7078                	.2byte	0x7078
+  44:	6e65622f          	.4byte	0x6e65622f
+  48:	616d6863          	bltu	s10,s6,658 <_start-0x79a8>
+  4c:	6b72                	.2byte	0x6b72
+  4e:	6f742f73          	csrrs	t5,0x6f7,s0
+  52:	00736c6f          	jal	s8,36858 <stack_top+0x16858>
+  56:	2e747263          	bgeu	s0,t2,33a <_start-0x7cc6>
+  5a:	6e490073          	.4byte	0x6e490073
+  5e:	5274                	.2byte	0x5274
+  60:	6765                	.2byte	0x6765
+  62:	6d49                	.2byte	0x6d49
+  64:	006d                	.2byte	0x6d
+  66:	65646f63          	bltu	s0,s6,6c4 <_start-0x793c>
+  6a:	732e                	.2byte	0x732e
+	...
+
+セクション .debug_info の逆アセンブル:
+
+00000000 <.debug_info>:
+   0:	0021                	.2byte	0x21
+   2:	0000                	.2byte	0x0
+   4:	0005                	.2byte	0x5
+   6:	0401                	.2byte	0x401
+   8:	0000                	.2byte	0x0
+   a:	0000                	.2byte	0x0
+   c:	0001                	.2byte	0x1
+   e:	0000                	.2byte	0x0
+  10:	0000                	.2byte	0x0
+  12:	0080                	.2byte	0x80
+  14:	9400                	.2byte	0x9400
+  16:	0001                	.2byte	0x1
+  18:	0000                	.2byte	0x0
+  1a:	3100                	.2byte	0x3100
+  1c:	0000                	.2byte	0x0
+  1e:	5c00                	.2byte	0x5c00
+  20:	0000                	.2byte	0x0
+  22:	0100                	.2byte	0x100
+  24:	2180                	.2byte	0x2180
+  26:	0000                	.2byte	0x0
+  28:	0500                	.2byte	0x500
+  2a:	0100                	.2byte	0x100
+  2c:	1404                	.2byte	0x1404
+  2e:	0000                	.2byte	0x0
+  30:	0100                	.2byte	0x100
+  32:	011c                	.2byte	0x11c
+  34:	0000                	.2byte	0x0
+  36:	8090                	.2byte	0x8090
+  38:	0000                	.2byte	0x0
+  3a:	01a4                	.2byte	0x1a4
+  3c:	0068                	.2byte	0x68
+  3e:	0000                	.2byte	0x0
+  40:	0031                	.2byte	0x31
+  42:	0000                	.2byte	0x0
+  44:	005c                	.2byte	0x5c
+  46:	0000                	.2byte	0x0
+  48:	8001                	.2byte	0x8001
+
+セクション .debug_abbrev の逆アセンブル:
+
+00000000 <.debug_abbrev>:
+   0:	1101                	.2byte	0x1101
+   2:	1000                	.2byte	0x1000
+   4:	12011117          	auipc	sp,0x12011
+   8:	1b0e030f          	.4byte	0x1b0e030f
+   c:	250e                	.2byte	0x250e
+   e:	130e                	.2byte	0x130e
+  10:	0005                	.2byte	0x5
+  12:	0000                	.2byte	0x0
+  14:	1101                	.2byte	0x1101
+  16:	1000                	.2byte	0x1000
+  18:	12011117          	auipc	sp,0x12011
+  1c:	1b0e030f          	.4byte	0x1b0e030f
+  20:	250e                	.2byte	0x250e
+  22:	130e                	.2byte	0x130e
+  24:	0005                	.2byte	0x5
+	...
+
+セクション .debug_aranges の逆アセンブル:
+
+00000000 <.debug_aranges>:
+   0:	001c                	.2byte	0x1c
+   2:	0000                	.2byte	0x0
+   4:	0002                	.2byte	0x2
+   6:	0000                	.2byte	0x0
+   8:	0000                	.2byte	0x0
+   a:	0004                	.2byte	0x4
+   c:	0000                	.2byte	0x0
+   e:	0000                	.2byte	0x0
+  10:	8000                	.2byte	0x8000
+  12:	0000                	.2byte	0x0
+  14:	0090                	.2byte	0x90
+	...
+  1e:	0000                	.2byte	0x0
+  20:	001c                	.2byte	0x1c
+  22:	0000                	.2byte	0x0
+  24:	0002                	.2byte	0x2
+  26:	0025                	.2byte	0x25
+  28:	0000                	.2byte	0x0
+  2a:	0004                	.2byte	0x4
+  2c:	0000                	.2byte	0x0
+  2e:	0000                	.2byte	0x0
+  30:	8090                	.2byte	0x8090
+  32:	0000                	.2byte	0x0
+  34:	00a4                	.2byte	0xa4
+	...
+
+セクション .debug_str の逆アセンブル:
+
+00000000 <.debug_str>:
+   0:	6d6f682f          	.4byte	0x6d6f682f
+   4:	2f65                	.2byte	0x2f65
+   6:	656d                	.2byte	0x656d
+   8:	746c                	.2byte	0x746c
+   a:	6f70                	.2byte	0x6f70
+   c:	6e69                	.2byte	0x6e69
+   e:	2f74                	.2byte	0x2f74
+  10:	2f757063          	bgeu	a0,s7,2f0 <_start-0x7d10>
+  14:	3362                	.2byte	0x3362
+  16:	7865                	.2byte	0x7865
+  18:	2f70                	.2byte	0x2f70
+  1a:	6562                	.2byte	0x6562
+  1c:	636e                	.2byte	0x636e
+  1e:	6d68                	.2byte	0x6d68
+  20:	7261                	.2byte	0x7261
+  22:	742f736b          	.4byte	0x742f736b
+  26:	736c6f6f          	jal	t5,c675c <stack_top+0xa675c>
+  2a:	7472632f          	.4byte	0x7472632f
+  2e:	732e                	.2byte	0x732e
+  30:	2f00                	.2byte	0x2f00
+  32:	6f68                	.2byte	0x6f68
+  34:	656d                	.2byte	0x656d
+  36:	6c656d2f          	.4byte	0x6c656d2f
+  3a:	7074                	.2byte	0x7074
+  3c:	746e696f          	jal	s2,e6782 <stack_top+0xc6782>
+  40:	7570632f          	.4byte	0x7570632f
+  44:	6533622f          	.4byte	0x6533622f
+  48:	7078                	.2byte	0x7078
+  4a:	6e65622f          	.4byte	0x6e65622f
+  4e:	616d6863          	bltu	s10,s6,65e <_start-0x79a2>
+  52:	6b72                	.2byte	0x6b72
+  54:	65742f73          	csrrs	t5,0x657,s0
+  58:	00737473          	csrrci	s0,0x7,6
+  5c:	20554e47          	.4byte	0x20554e47
+  60:	5341                	.2byte	0x5341
+  62:	3220                	.2byte	0x3220
+  64:	332e                	.2byte	0x332e
+  66:	0039                	.2byte	0x39
+  68:	6e49                	.2byte	0x6e49
+  6a:	5274                	.2byte	0x5274
+  6c:	6765                	.2byte	0x6765
+  6e:	6d49                	.2byte	0x6d49
+  70:	2f6d                	.2byte	0x2f6d
+  72:	65646f63          	bltu	s0,s6,6d0 <_start-0x7930>
+  76:	732e                	.2byte	0x732e
+	...
